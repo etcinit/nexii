@@ -2,6 +2,8 @@
 
 CLI client for the [Nexus Configuration Server](https://github.com/etcinit/nexus) written in Go
 
+[![wercker status](https://app.wercker.com/status/d9243f7ee424999e29466af3c3e0b060/m "wercker status")](https://app.wercker.com/project/bykey/d9243f7ee424999e29466af3c3e0b060)
+
 ## Installing
 
 - Setup your `$GOPATH`
