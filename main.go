@@ -13,7 +13,7 @@ func main() {
 	app.Name = "nexii"
 	app.Usage = "A Nexus Configuration Server CLI client"
 	app.Author = "Eduardo Trujillo <ed@chromabits.com>"
-	app.Version = "0.1.1"
+	app.Version = "0.1.2"
 	app.Action = func(c *cli.Context) {
 		println("See 'nexii help' for more information")
 	}

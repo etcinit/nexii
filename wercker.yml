@@ -44,8 +44,8 @@ deploy:
     - script:
         name: compile dist package
         code: |
-          go get
-          go build -o nexii
+          go get -u -v github.com/laher/goxc
+          sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
           make release
     - script:
         name: get version from app
@@ -53,7 +53,27 @@ deploy:
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: $APP_VERSION
-    - github-upload-asset:
-        token: $GITHUB_TOKEN
-        file: build.tar.gz
-        filename: nexii-linux-arm64.tar.gz
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_linux_386.tar.gz
+            filename: nexii-linux-386.tar.gz
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_linux_amd64.tar.gz
+            filename: nexii-linux-amd64.tar.gz
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_darwin_386.zip
+            filename: nexii-macosx-386.zip
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_darwin_amd64.zip
+            filename: nexii-macosx-amd64.zip
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_windows_386.zip
+            filename: nexii-windows-386.zip
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: snapshot/nexii_windows_amd64.zip
+            filename: nexii-windows-amd64.zip
