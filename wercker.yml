@@ -1,4 +1,4 @@
-box: etcinit/wercker-box-golang-goxc
+box: etcinit/golang-goxc
 # Build definition
 build:
   # The steps that will be executed on build
