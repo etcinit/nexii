@@ -8,7 +8,7 @@ CLI client for the [Nexus Configuration Server](https://github.com/etcinit/nexus
 
 ### Homebrew on OSX
 
-The easiest way to use nexii is to install with Brew:
+The easiest way to get nexii is to install it with Brew:
 
 - `brew tap etcinit/homebrew-etcinit`
 - `brew install nexii`
@@ -17,8 +17,8 @@ The easiest way to use nexii is to install with Brew:
 
 Binaries are automatically built on every release:
 
-- Download the binaries from https://github.com/etcinit/nexii/releases
-- Extract it and copy the binary somewhere in your `$PATH`
+- Download the archive for your platform from https://github.com/etcinit/nexii/releases
+- Extract it and copy the `nexii` binary to somewhere in your `$PATH`
 
 ## Building
 
