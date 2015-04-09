@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/codegangsta/cli"
@@ -20,6 +21,10 @@ func main() {
 	hostname, err := os.Hostname()
 	if err != nil {
 		hostname = "nexii"
+	}
+
+	cli.VersionPrinter = func(c *cli.Context) {
+		fmt.Fprintf(c.App.Writer, "%v", c.App.Version)
 	}
 
 	app.Flags = []cli.Flag{
