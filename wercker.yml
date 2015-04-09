@@ -26,6 +26,10 @@ build:
         name: go test
         code: |
           go test ./...
+    - script:
+        name: compile dist package
+        code: |
+          make release
 deploy:
     steps:
         - script:

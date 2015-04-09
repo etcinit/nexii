@@ -20,7 +20,7 @@ USAGE:
    nexii [global options] command [command options] [arguments...]
 
 VERSION:
-   0.1.0
+   0.1.1
 
 AUTHOR(S):
    Eduardo Trujillo <ed@chromabits.com>
@@ -30,6 +30,7 @@ COMMANDS:
    get, g, cat	Get and output a specific key
    download, d	Get and save a specific key
    info, i, app	Get information about the application
+   ping, p	Ping the server with a message
    help, h	Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
