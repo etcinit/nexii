@@ -46,7 +46,6 @@ deploy:
         code: |
           go get -u -v github.com/laher/goxc
           go build -o nexii
-          sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
           make release
     - script:
         name: get version from app
