@@ -1,4 +1,4 @@
-box: wercker/golang
+box: etcinit/wercker-box-golang-goxc
 # Build definition
 build:
   # The steps that will be executed on build
@@ -45,6 +45,7 @@ deploy:
         name: compile dist package
         code: |
           go get -u -v github.com/laher/goxc
+          go build -o nexii
           sudo -E env PATH=$GOPATH/bin:$PATH goxc -t
           make release
     - script:
