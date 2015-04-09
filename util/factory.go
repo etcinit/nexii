@@ -14,11 +14,11 @@ func MakeClient(c *cli.Context) (*nexus.Client, error) {
 	endpoint := os.Getenv("NEXUS_SERVER")
 	token := os.Getenv("NEXUS_APIKEY")
 
-	if c.String("endpoint") != "" {
-		endpoint = c.String("endpoint")
+	if c.GlobalString("endpoint") != "" {
+		endpoint = c.GlobalString("endpoint")
 	}
-	if c.String("token") != "" {
-		token = c.String("token")
+	if c.GlobalString("token") != "" {
+		token = c.GlobalString("token")
 	}
 
 	if endpoint == "" || token == "" {
