@@ -6,7 +6,7 @@ CLI client for the [Nexus Configuration Server](https://github.com/etcinit/nexus
 
 - Setup your `$GOPATH`
 - Make sure `$GOPATH/bin` is in your `$PATH`
-- `$ go install github.com/etcinit/nexii`
+- `$ go get github.com/etcinit/nexii`
 
 ## Usage
 
