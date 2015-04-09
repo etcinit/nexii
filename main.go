@@ -12,9 +12,14 @@ func main() {
 	app.Name = "nexii"
 	app.Usage = "A Nexus Configuration Server CLI client"
 	app.Author = "Eduardo Trujillo <ed@chromabits.com>"
-	app.Version = "0.1.0"
+	app.Version = "0.1.1"
 	app.Action = func(c *cli.Context) {
 		println("See 'nexii help' for more information")
+	}
+
+	hostname, err := os.Hostname()
+	if err != nil {
+		hostname = "nexii"
 	}
 
 	app.Flags = []cli.Flag{
@@ -63,6 +68,24 @@ func main() {
 			Aliases: []string{"i", "app"},
 			Usage:   "Get information about the application",
 			Action:  commands.InfoCommand,
+		},
+		{
+			Name:    "ping",
+			Aliases: []string{"p"},
+			Usage:   "Ping the server with a message",
+			Action:  commands.PingCommand,
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "name, hostname",
+					Value: hostname,
+					Usage: "Client name to send to the server",
+				},
+				cli.StringFlag{
+					Name:  "message, m",
+					Value: "Nexii Client",
+					Usage: "Message to send to the server",
+				},
+			},
 		},
 	}
 
